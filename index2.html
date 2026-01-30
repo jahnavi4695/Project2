@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Info App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #74ebd5, #acb6e5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .weather-box {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="weather-box">
+    <h2>Weather Info App 🌦️</h2>
+    <input type="text" id="city" placeholder="Enter city name">
+    <button onclick="showWeather()">Get Weather</button>
+
+    <div class="result" id="weatherResult">
+        <h3 id="cityName"></h3>
+        <p>🌡️ Temperature: 28°C</p>
+        <p>💧 Humidity: 65%</p>
+        <p>🌥️ Condition: Sunny</p>
+    </div>
+</div>
+
+<script>
+    function showWeather() {
+        var city = document.getElementById("city").value;
+
+        if (city === "") {
+            alert("Please enter a city name");
+        } else {
+            document.getElementById("cityName").innerHTML = city;
+            document.getElementById("weatherResult").style.display = "block";
+        }
+    }
+</script>
+
+</body>
+</html>
